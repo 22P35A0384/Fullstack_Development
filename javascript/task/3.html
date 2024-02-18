@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>undefined or null</title>
+</head>
+<body>
+	<center>
+		<script type="text/javascript">
+				function show(){
+					function checkUndefinedOrNull(variable) {
+						if (variable === undefined) {
+			    			return "The variable is undefined.";
+			  			}
+			  			else if (variable === null) {
+			    			return "The variable is null.";
+			  			}
+			  			else {
+			    			return typeof(variable);
+			  			}
+					}
+
+					const variable1 = undefined;
+					const variable2 = null;
+					const variable3 = "Hello";
+
+					document.write("Variable 1:", checkUndefinedOrNull(variable1)+"<br>");
+					document.write("Variable 2:", checkUndefinedOrNull(variable2)+"<br>");
+					document.write("Variable 3: The variable is ", checkUndefinedOrNull(variable3)+"<br>");
+				}
+				show()
+		</script>
+	</center>
+</body>
+</html>

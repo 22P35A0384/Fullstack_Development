@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>data types</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Number
+		const age = 25;
+
+		// String
+		const name = "Gangadhar Jami";
+
+		// Boolean
+		const isStudent = true;
+
+		// Null
+		const emptyValue = null;
+
+		// Undefined
+		let undefinedValue;
+
+		// Object
+		let person = {
+		  firstName: "Gangadhar",
+		  lastName: "Jami",
+		  age: 30,
+		  isStudent: false,
+		};
+
+		// Array
+		const numbers = [1, 2, 3, 4, 5];
+
+		// Function
+		function greet(name) {
+		  return "Hello, " + name + "!";
+		}
+
+		// Symbol
+		const uniqueKey = Symbol("key");
+
+		document.write("Number:"+ age+"<br>");
+		document.write("String:"+ name+"<br>");
+		document.write("Boolean:"+ isStudent+"<br>");
+		document.write("Null:"+ emptyValue+"<br>");
+		document.write("Undefined:"+ undefinedValue+"<br>");
+		document.write("Object:"+person.firstName+" "+person.lastName+" "+person.age+" "+person.isStudent+"<br>")
+		document.write("Array:"+ numbers+"<br>");
+		document.write("Function:"+ greet("Gangadhar")+"<br>");
+		// document.write("Symbol:"+ uniqueKey+"<br>");
+	</script>
+</body>
+</html>
