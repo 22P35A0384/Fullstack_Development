@@ -5,7 +5,7 @@ import { Navigationhome } from "./navigation copy";
 
 function Projects(){
     const setBackgroundImage = () => {
-        document.querySelector('.backgroundimg').style.backgroundImage = "url('http://localhost:5000/img/whitebg.jpg')";
+        document.querySelector('.backgroundimg').style.backgroundImage = "url('https://space-club.onrender.com/img/whitebg.jpg')";
         document.querySelector('.backgroundimg').style.backgroundSize = "cover";
     };
     setBackgroundImage();

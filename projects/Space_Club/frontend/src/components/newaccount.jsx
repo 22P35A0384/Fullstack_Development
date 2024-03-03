@@ -9,7 +9,7 @@ function NewAccount(){
         imageref.current.click()
     }
     const setBackgroundImage = () => {
-        document.querySelector('.backgroundimg').style.backgroundImage = "url('http://localhost:5000/img/space.jpg')";
+        document.querySelector('.backgroundimg').style.backgroundImage = "url('https://space-club.onrender.com/img/space.jpg')";
         document.querySelector('.backgroundimg').style.backgroundSize = "cover";
     };
     setBackgroundImage();
@@ -119,7 +119,7 @@ function NewAccount(){
             Senddata.append('password',newuser.password)
             Senddata.append('email',newuser.email)
             Senddata.append('myimg',newuser.myimg)
-            axios.post('http://localhost:5000/addnewuser',Senddata).then((result)=>{
+            axios.post('https://space-club.onrender.com/addnewuser',Senddata).then((result)=>{
                 alert(result.data.msg)
                 Nav('/login')
             })
@@ -171,7 +171,7 @@ function NewAccount(){
         }else{
             const backendmail = newuser.email
             // alert(backendmail)
-            axios.get(`http://localhost:5000/checkmail/${backendmail}`).then((res)=>{
+            axios.get(`https://space-club.onrender.com/checkmail/${backendmail}`).then((res)=>{
                 if(res.data){
                     document.getElementById('otpblock').style.display = 'block'
                     // document.getElementsByClassName('newaccountbtn').style.display = 'none'
@@ -179,7 +179,7 @@ function NewAccount(){
                     // e.preventDefault()
                     const mail = newuser.email
                     // console.log(mail)
-                    axios.get('http://localhost:5000/sendotp/'+mail).then((response)=>{
+                    axios.get('https://space-club.onrender.com/sendotp/'+mail).then((response)=>{
                         // console.log(mail)
                         const newotp = (response.data.otp)
                         setnewotp(newotp)
@@ -195,13 +195,13 @@ function NewAccount(){
         <>
             <form style={{paddingBottom:'70px'}} id="createnewaccount" onSubmit={Createuser}>
                 <input className="fileinput" type="file" ref={imageref} onChange={(e)=>getnewuser({...newuser,myimg:e.target.files[0]},setimg(e.target.files[0]))}/><br/><br/>
-                {image ? <img onClick={changeimg} style={{position:'relative',cursor:'pointer'}} id="editimg" src={URL.createObjectURL(image)} alt="profileImg"/> : <img onClick={changeimg} style={{position:'relative',cursor:"pointer"}} id="editimg" src={"http://localhost:5000/img/null2.png"} alt="profileImg"/>}
+                {image ? <img onClick={changeimg} style={{position:'relative',cursor:'pointer'}} id="editimg" src={URL.createObjectURL(image)} alt="profileImg"/> : <img onClick={changeimg} style={{position:'relative',cursor:"pointer"}} id="editimg" src={"https://space-club.onrender.com/img/null2.png"} alt="profileImg"/>}
                 <input className="newaccount" type="text" placeholder="Enter Your First Name" onChange={(e)=>getnewuser({...newuser,fname:e.target.value})}/><br/><br/>
                 <input className="newaccount" type="text" placeholder="Enter Your Last Name" onChange={(e)=>getnewuser({...newuser,lname:e.target.value})}/><br/><br/>
                 <input className="newaccount" type="email" placeholder="Enter Your Mail" onChange={(e)=>getnewuser({...newuser,email:e.target.value})}/><br/><br/>
                 <input className="newaccount" type="password" placeholder="Enter A Password" onChange={(e)=>getnewuser({...newuser,password:e.target.value},checkpass(e))}/><br/><br/>
                 <input className="newaccount" type="password" placeholder="Conform Password" onChange={(e)=>getnewuser({...newuser,cnfpass:e.target.value})}/><br/><br/>
-                <button className="newaccountbtn" style={{position:'relative',top:'40px'}}  type="submit">Create Account</button>
+                <button className="newaccountbtn"  type="submit">Create Account</button>
             </form>
             <div id="otpblock">
                 <div id="otpwindow">

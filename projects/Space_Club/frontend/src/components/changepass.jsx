@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Navigationhome } from "./navigation copy";
+import { Navigationsettings } from "./navigation copy 2";
 
 function Changepass(){
     const setBackgroundImage = () => {
-        document.querySelector('.backgroundimg').style.backgroundImage = "url('http://localhost:5000/img/space1.webp')";
+        document.querySelector('.backgroundimg').style.backgroundImage = "url('https://space-club.onrender.com/img/space1.webp')";
         document.querySelector('.backgroundimg').style.backgroundSize = "cover";
     };
     setBackgroundImage();
@@ -81,21 +81,27 @@ function Changepass(){
             // e.preventDefault()
             alert('Password Must Contain Atleast 8 Characters')
         }else{
-            axios.put('http://localhost:7416/changepass/'+localStorage.getItem('user')+'/'+changepass.oldpass+'/'+changepass.newpass).then((response)=>{
-                alert(response.data.msg)
-                window.location.href="/login"
+            console.log(localStorage.getItem('user'))
+            axios.put(`https://space-club.onrender.com/changepass/${localStorage.getItem('user')}`,changepass).then((response)=>{
+                // alert(response.data.msg)
+                if(response.data===false){
+                    alert('Invalid Password')
+                }else{
+                    alert('Password Changed Sucessfully!!')
+                    window.location.href="/logout"
+                }
             })
         }
     }
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [databymail, setdatabymail] = useState([])
+    // const [databymail, setdatabymail] = useState([])
     const id = localStorage.getItem('user')
-    useEffect(()=>{
-        axios.get('http://localhost:7416/getdatabyemail/'+id).then((response)=>{
-            setdatabymail(response.data.logindata)
-            // console.log(databymail.username)
-        })
-    },[])
+    // useEffect(()=>{
+    //     axios.get('https://space-club.onrender.com/getdatabyemail/'+id).then((response)=>{
+    //         setdatabymail(response.data.logindata)
+    //         // console.log(databymail.username)
+    //     })
+    // },[])
     const Gotologin = () =>{
         Nav('/logout')
     }
@@ -104,20 +110,20 @@ function Changepass(){
     }
     return(
         <div>
-            <Navigationhome />
-            <div style={{paddingTop:'4%'}}>
-                <div style={{textAlign:'center'}}>
+            <Navigationsettings />
+            <div id="editprofile">
+                <div id="settingsbtns">
                     <Link to={'/editprofile'}><button id="navbtn">EDIT PROFILE</button></Link>
                     <Link to={'/changepassword'}><button style={{backgroundColor:'red'}} id="navbtn">CHANGE PASSWORD</button></Link>
                     <Link to={'/deleteaccount'}><button id="navbtn">DELETE ACCOUNT</button></Link>
                 </div>
-                <div id="loginblock" style={{position:'relative',top:'150px',left:'900px',paddingBottom:'50px'}}>
-                    <h4 style={{position:'relative',top:'25px'}}>CHANGE PASSWORD</h4>
-                    <hr style={{position:'relative',top:'20px'}} id="hr"/>
+                <div id="loginblock">
+                    <h4>CHANGE PASSWORD</h4>
+                    <hr style={{marginTop:'-25px'}} id="hr"/>
                     <input id="loginblock2" type="password" placeholder="Enter Your Old Password" onChange={(e)=>setchangepass({...changepass,oldpass:e.target.value})}/><br/><br/>
                     <input id="loginblock2" type="password" placeholder="Enter Your New Password" onChange={(e)=>setchangepass({...changepass,newpass:e.target.value},checkpass(e))}/><br/><br/>
                     <input id="loginblock2" type="password" placeholder="Re-Enter New Password" onChange={(e)=>setchangepass({...changepass,cnfpass:e.target.value})}/><br/><br/>
-                    <button id="loginbutton1" onClick={()=>Submit()}>SUBMIT</button><br/>
+                    <button style={{marginBottom:'25px'}} id="loginbutton1" onClick={()=>Submit()}>SUBMIT</button><br/>
                 </div>
             </div> 
         </div>

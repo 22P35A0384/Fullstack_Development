@@ -5,11 +5,11 @@ export const Image = ({ title, largeImage, smallImage }) => {
     <div className="portfolio-item">
       <div className="hover-bg">
         {" "}
-        <a href={largeImage} title={title} data-lightbox-gallery="gallery1">
+        <a style={{width:'100%',height:'350px'}} href={largeImage} title={title} data-lightbox-gallery="gallery1">
           <div className="hover-text">
             <h4>{title}</h4>
           </div>
-          <img src={smallImage} className="img-responsive" alt={title} />{" "}
+          <img  style={{width:'100%',height:'400px'}} src={smallImage} className="img-responsive" alt={title} />{" "}
         </a>{" "}
       </div>
     </div>

@@ -7,11 +7,11 @@ export const About = (props) => {
         <div className="row">
           <div className="col-xs-12 col-md-6">
             {" "}
-            <img src='http://localhost:5000/img/nav_icon.jpg' className="img-responsive" alt="" />{" "}
+            <img src='https://space-club.onrender.com/img/nav_icon.jpg' className="img-responsive" alt="" />{" "}
           </div>
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
-              <h2>AIM Of The CLUB</h2>
+              <h2>CLUB AIM</h2>
               <p>{props.data ? props.data.paragraph : "loading..."}</p>
               <h3>Why Choose Us?</h3>
               <div className="list-style">

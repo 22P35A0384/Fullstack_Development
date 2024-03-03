@@ -20,118 +20,118 @@
   },
   "Gallery": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "title": "Mental Anna",
+      "largeImage": "https://space-club.onrender.com/img/mental.jpg",
+      "smallImage": "https://space-club.onrender.com/img/mental.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/02-large.jpg",
-      "smallImage": "img/portfolio/02-small.jpg"
+      "title": "Driver Ready",
+      "largeImage": "https://space-club.onrender.com/img/drivergowtham.jpg",
+      "smallImage": "https://space-club.onrender.com/img/drivergowtham.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/03-large.jpg",
-      "smallImage": "img/portfolio/03-small.jpg"
+      "title": "Niku Dannam Pedatha Anna",
+      "largeImage": "https://space-club.onrender.com/img/annathopu.jpg",
+      "smallImage": "https://space-club.onrender.com/img/annathopu.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/04-large.jpg",
-      "smallImage": "img/portfolio/04-small.jpg"
+      "title": "Anna Bolthe",
+      "largeImage": "https://space-club.onrender.com/img/samu.jpg",
+      "smallImage": "https://space-club.onrender.com/img/samu.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/05-large.jpg",
-      "smallImage": "img/portfolio/05-small.jpg"
+      "title": "Aunty Bolthe",
+      "largeImage": "https://space-club.onrender.com/img/sahithi.png",
+      "smallImage": "https://space-club.onrender.com/img/sahithi.png"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/06-large.jpg",
-      "smallImage": "img/portfolio/06-small.jpg"
+      "title": "VIP Bolthe",
+      "largeImage": "https://space-club.onrender.com/img/vaishnavi.jpg",
+      "smallImage": "https://space-club.onrender.com/img/vaishnavi.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
+      "title": "Gowtham's Cute Girl",
+      "largeImage": "https://space-club.onrender.com/img/gowthamg.jpg",
+      "smallImage": "https://space-club.onrender.com/img/gowthamg.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/08-large.jpg",
-      "smallImage": "img/portfolio/08-small.jpg"
+      "title": "President Bolthe",
+      "largeImage": "https://space-club.onrender.com/img/sarvani.jpg",
+      "smallImage": "https://space-club.onrender.com/img/sarvani.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
+      "title": "Goodnight Bolthe",
+      "largeImage": "https://space-club.onrender.com/img/sushu.jpg",
+      "smallImage": "https://space-club.onrender.com/img/sushu.jpg"
     }
   ],
   "Services": [
     {
-      "icon": "http://localhost:5000/img/nit.jpg",
+      "icon": "https://space-club.onrender.com/img/nit.jpg",
       "name": "NIT-AGARTALA",
       "text": "SAE Collegiate Club of NIT Agartala was founded to participate in various SAE competitions like mBAJA, Aero Design Challenge, eBAJA, etc.It continues to be a very active club of the college with over 50 participants."
     },
     {
-      "icon": "http://localhost:5000/img/CHANDIGHAR_UNIVERSITY.jpg",
+      "icon": "https://space-club.onrender.com/img/CHANDIGHAR_UNIVERSITY.jpg",
       "name": "CHANDIGHAR UNIVERSITY",
       "text": "Chandigarh University Astronomy Club (CUAC) is a portal to the universe. We are a community bound by our love for the stars, planets, and the mysteries that surround the universe. The club offers something for everyone, from thrilling telescope observations to fascinating discussions about the latest space discoveries. We here at cuac promise to deliver fascination, exploration, excitement, and commitment to space explorers and enthusiasts alike."
     },
     {
-      "icon": "http://localhost:5000/img/rit.jpg",
+      "icon": "https://space-club.onrender.com/img/rit.jpg",
       "name": "RIT COLLEGE",
       "text": "Space Club, RIT is a family of Innovative, inquisitive, bright, aspiring engineering students of Rajarambapu Institute of Technology having interest in Space. Students here work on launching Rockets, establishing wireless connections with satellites and International space station, and currently working on the project of making their own student satellite."
     }
   ],
   "Testimonials": [
     {
-      "img": "http://localhost:5000/img/Seshareddy_Nallamilli.jpg",
+      "img": "https://space-club.onrender.com/img/Seshareddy_Nallamilli.jpg",
       "text": "\"I believe in the philosophy of thought, word and deed as eternal which made Aditya what it is today.\"",
       "name": "Seshareddy Nallamilli"
     },
     {
-      "img": "http://localhost:5000/img/Dr_Satish_Reddy_Nallamilli.jpg",
+      "img": "https://space-club.onrender.com/img/Dr_Satish_Reddy_Nallamilli.jpg",
       "text": "\"Finally a desire can change nothing, a decision can change something but a determination can change everything. \"",
       "name": "Dr Satish Reddy Nallamilli"
     },
     {
-      "img": "http://localhost:5000/img/deeepakreddy.jpg",
+      "img": "https://space-club.onrender.com/img/deeepakreddy.jpg",
       "text": "\"The significant problems we face cannot be solved at the same level of thinking we were at when we created them.\"",
       "name": "Sri N K Deepak Reddy"
     },
     {
-      "img": "http://localhost:5000/img/Dr_M_Sreenivasa_Reddy.jpg",
+      "img": "https://space-club.onrender.com/img/Dr_M_Sreenivasa_Reddy.jpg",
       "text": "\"The whole purpose of education is to turn mirrors into windows.\"",
       "name": "Dr. M Sreenivasa Reddy"
     },
     {
-      "img": "http://localhost:5000/img/dola.jpg",
+      "img": "https://space-club.onrender.com/img/dola.jpg",
       "text": "\"The road to excellence is toughest, roughest and steepest in the Universe. The world requires and honors only excellence.\"",
       "name": "Dola Sanjay S"
     },
     {
-      "img": "http://localhost:5000/img/Dr_Ramesh_Adireddy.jpg",
+      "img": "https://space-club.onrender.com/img/Dr_Ramesh_Adireddy.jpg",
       "text": "\"Those who educate children well are more to be honored than parents, for these only gave life, those the art of living well.\"",
       "name": "Dr.Ramesh Adireddy"
     }
   ],
   "Team": [
     {
-      "img": "http://localhost:5000/img/rohit.jpg",
+      "img": "https://space-club.onrender.com/img/rohit.jpg",
       "name": "Rohit Avalareddy",
       "job": "Founder"
     },
     {
-      "img": "http://localhost:5000/img/samu.jpg",
+      "img": "https://space-club.onrender.com/img/samu.jpg",
       "name": "Samuel Binnu",
       "job": "Project Manager"
     },
     {
-      "img": "http://localhost:5000/img/22p35a0384.jpg",
+      "img": "https://space-club.onrender.com/img/22P35A0384.jpg",
       "name": "Gangadhar Jami",
       "job": "Senior Web Developer"
     },
     {
-      "img": "http://localhost:5000/img/gowtham.png",
+      "img": "https://space-club.onrender.com/img/gowtham.png",
       "name": "GOWTHAM KARTHIKEYA",
       "job": "Software Developer"
     }
@@ -150,17 +150,17 @@
     {
       "icon": "fa fa-comments-o",
       "title": "Monthly Magazine",
-      "text": "The activity of creating a monthly magazine aims to enhance writing, journaling, and research skills, as well as promote teamwork. The magazine, prepared by the team, will be submitted to all the campuses' libraries and online platforms. Content creators involved in this initiative can kickstart their careers in journalism, gaining valuable experience and earning recognition and appreciation."
+      "text": "The activity of creating a monthly magazine aims to enhance writing, journaling, and research skills, as well as promote teamwork. The magazine, prepared by the team, will be submitted to all the campuses' libraries and online platforms. Content creators involved in this initiative can kickstart their careers in journalism."
     },
     {
       "icon": "fa fa-bullhorn",
       "title": "Space Talks",
-      "text": "This is an opportunity for space enthusiasts who want to share their passion and knowledge with others. Space talks functions similarly to TED Talks, where a speaker and a team choose a topic, prepare a presentation, and present it in front of all the students and faculty. This activity aims to enhance their communication and presentation skills, garnering recognition and appreciation. Winners will receive an appreciation certificate as well as prize money, and their presentation videos will be uploaded on all social media platforms. Additionally, speakers may gain fame, opening doors in their careers"
+      "text": "This is an opportunity for space enthusiasts who want to share their passion and knowledge with others. Space talks functions similarly to TED Talks, where a speaker and a team choose a topic, prepare a presentation, and present it in front of all the students and faculty. This activity aims to enhance their communication and presentation skills, garnering recognition and appreciation."
     },
     {
       "icon": "fa fa-group",
       "title": "School Campaigns",
-      "text": "The school campaign is an activity to raise awareness about space technology and guide students on starting their careers after completing the 10th grade. This initiative aims to assist school students in launching their careers in the space sector. By conducting this campaign, we hope to help at least one person reach their goals, creating a lasting impact on their lives. They will remember us if they succeed in their careers. The guidance provided during this activity is akin to serving our country's growth and success. Today's kids, tomorrow's future."
+      "text": "The school campaign is an activity to raise awareness about space technology and guide students on starting their careers after completing the 10th grade. This initiative aims to assist school students in launching their careers in the space sector. By conducting this campaign, we hope to help at least one person reach their goals."
     },
     {
       "icon": "fa fa-magic",

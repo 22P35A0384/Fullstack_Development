@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Forgotpassword(){
     const setBackgroundImage = () => {
-        document.querySelector('.backgroundimg').style.backgroundImage = "url('http://localhost:5000/img/rover.jpg')";
+        document.querySelector('.backgroundimg').style.backgroundImage = "url('https://space-club.onrender.com/img/rover.jpg')";
         document.querySelector('.backgroundimg').style.backgroundSize = "cover";
     };
     setBackgroundImage();
@@ -102,7 +102,7 @@ function Forgotpassword(){
         }
         if(c===6){
             // alert('valid otp')
-            axios.put('http://localhost:5000/updatepass',Data).then((res)=>{
+            axios.put('https://space-club.onrender.com/updatepass',Data).then((res)=>{
                 alert("Password Updated Sucessfully")
                 window.location.href='/login'
             })
@@ -142,7 +142,7 @@ function Forgotpassword(){
         }else{
             // alert(Data.email)
             const mailid = Data.email;
-            axios.get(`http://localhost:5000/forgotpassword/${mailid}`).then((res)=>{
+            axios.get(`https://space-club.onrender.com/forgotpassword/${mailid}`).then((res)=>{
                 if(res.data){
                     document.getElementById('otpblock').style.display = 'block'
                     const genotp = res.data
@@ -157,7 +157,7 @@ function Forgotpassword(){
     }
     return(
         <>
-            <div style={{marginLeft:'12%',textAlign:'center'}} id="loginblock">
+            <div style={{textAlign:'center'}} id="loginblock">
                 <input id="loginblock2" type="email" placeholder="Enter Your Email" onChange={(e)=>Setdata({...Data,email:e.target.value})}/><br/><br/>
                 <input id="loginblock2" type="password" placeholder="Enter A New Password" onChange={(e)=>Setdata({...Data,newpass:e.target.value},checkpass(e))}/><br/><br/>
                 <input id="loginblock2" type="password" placeholder="Re-Enter Your New Password" onChange={(e)=>Setdata({...Data,cnfnewpass:e.target.value})}/><br/><br/>

@@ -1,11 +1,11 @@
 import { Link ,useNavigate} from "react-router-dom";
 import { useEffect,useRef,useState } from "react";
 import axios from "axios";
-import { Navigationhome } from "./navigation copy";
+import { Navigationsettings } from "./navigation copy 2";
 
 function Editprofile(){
     const setBackgroundImage = () => {
-        document.querySelector('.backgroundimg').style.backgroundImage = "url('http://localhost:5000/img/space1.webp')";
+        document.querySelector('.backgroundimg').style.backgroundImage = "url('https://space-club.onrender.com/img/space1.webp')";
         document.querySelector('.backgroundimg').style.backgroundSize = "cover";
     };
     setBackgroundImage();
@@ -27,28 +27,29 @@ function Editprofile(){
         'fname': '',
         'lname': '',
         'email': '',
-        'myimg': ''
+        'myimg': '',
+        'changedimg': ''
     });
 
     useEffect(() => {
-        const id = localStorage.getItem('email')
+        const id = localStorage.getItem('user')
         console.log(id)
-        axios.get(`http://localhost:5000/getdata/${id}`).then((response) => {
-            const data = response.data.logindata;
-            console.log(data)
+        axios.get(`https://space-club.onrender.com/getdata/${id}`).then((response) => {
+            const data = response.data;
+            // console.log(data)
             setdatabymail(data);
             seteditdata({
             'fname': data.fname,
             'lname': data.lname,
             'email': data.email,
-            'myimg': ''
+            'changedimg': data.profile
             });
         });
     }, [Nav, id]);
-
+    // console.log(editdata.myimg)
     const Savedata = () => {
         if(!editdata.myimg){
-            axios.put(`http://localhost:7416/editdata/${id}`,editdata).then((response)=>{
+            axios.put(`https://space-club.onrender.com/editdata/${id}`,editdata).then((response)=>{
                 alert(response.data.msg)
                 window.location.reload()
             })
@@ -59,7 +60,7 @@ function Editprofile(){
             neweditdata.append('lname',editdata.lname)
             neweditdata.append('email',editdata.email)
             neweditdata.append('myimg',editdata.myimg)
-            axios.put(`http://localhost:7416/editdataimg/${id}`,neweditdata).then((response)=>{
+            axios.put(`https://space-club.onrender.com/editdataimg/${id}`,neweditdata).then((response)=>{
                 alert(response.data.msg)
                 window.location.reload()
             })
@@ -76,15 +77,15 @@ function Editprofile(){
     }
     return(
         <div>
-            <Navigationhome />
-            <div style={{paddingTop:'4%'}}>
-                <div style={{textAlign:'center'}}>
+            <Navigationsettings />
+            <div id="editprofile">
+                <div id="settingsbtns">
                     <Link to={'/editprofile'}><button style={{backgroundColor:'red'}} id="navbtn">EDIT PROFILE</button></Link>
                     <Link to={'/changepassword'}><button id="navbtn">CHANGE PASSWORD</button></Link>
                     <Link to={'/deleteaccount'}><button id="navbtn">DELETE ACCOUNT</button></Link>
                 </div>
-                <div id="loginblock" style={{position:'relative',top:'80px',left:'900px', backgroundColor:' rgb(219, 208, 84)'}}>
-                    <div id="editimgdiv">{image ? <img onClick={changeimg} id="editimg" src={URL.createObjectURL(image)} alt="profile img"/> : <img id="editimg" onClick={changeimg} src={`http://localhost:5000/profile/1708077067461_22P35A0384.jpg`} alt="profileImg"/>}</div><br/>
+                <div id="loginblock">
+                    <div id="editimgdiv">{image ? <img onClick={changeimg} id="editimg" src={URL.createObjectURL(image)} alt="profile img"/> : <img id="editimg" onClick={changeimg} src={`https://space-club.onrender.com/profile/${editdata.changedimg}`} alt="profileImg"/>}</div><br/>
                     <input id="loginblock1" value={editdata.fname} type="text" placeholder="Enter Your First Name" onChange={(e)=>seteditdata({...editdata,fname:e.target.value})}/><br/><br/>
                     <input id="loginblock1" value={editdata.lname} type="text" placeholder="Enter Your Last Name" onChange={(e)=>seteditdata({...editdata,lname:e.target.value})}/><br/><br/>
                     <input id="loginblock1" value={editdata.email} type="email" placeholder="Enter Your Mail" onChange={(e)=>seteditdata({...editdata,email:e.target.value})}/><br/><br/>

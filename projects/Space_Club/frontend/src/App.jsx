@@ -22,6 +22,7 @@ import Changepass from "./components/changepass.jsx";
 import DeleteAcc from "./components/deleteacc.jsx";
 import Projects from "./components/projects.jsx";
 import Addproject from "./components/addproject.jsx";
+import Events from "./components/events.jsx";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -30,7 +31,7 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 const App = () => {
   const setBackgroundImage = () => {
-    document.querySelector('.backgroundimg').style.backgroundImage = "url('http://localhost:5000/img/whitebg.jpg')";
+    document.querySelector('.backgroundimg').style.backgroundImage = "url('https://space-club.onrender.com/img/whitebg.jpg')";
     document.querySelector('.backgroundimg').style.backgroundSize = "cover";
   };
   // console.log(window.localStorage.getItem('profile'))
@@ -89,6 +90,7 @@ return (
         <Route path="/deleteaccount" element={<DeleteAcc/>}/>
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/addnewproject" element={<Addproject/>}/>
+        <Route path="/passes" element={<Events/>}/>
 
       </Routes>
     </BrowserRouter>

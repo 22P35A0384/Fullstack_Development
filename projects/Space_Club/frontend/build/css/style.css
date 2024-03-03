@@ -7,7 +7,7 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   /* padding-top: -10px; */
   /* margin-top: 50px; */
 }
@@ -74,6 +74,7 @@ hr {
   border: 0;
 }
 /* Navigation */
+/* Add additional responsive styles here */
 #menu {
   /* margin-top: -20px; */
   padding: 15px;
@@ -151,6 +152,7 @@ hr {
   border-radius: 50%;
   margin-left: 50%;
   cursor: pointer;
+  left: 50%;
   /* box-shadow: 2px 2px 5px black; */
 }
 
@@ -345,27 +347,141 @@ a:focus,
 .btn.active.focus {
   outline: none;
   outline-offset: none;
-}
-
-#navigationmain{
+} 
+/* Common styles for all screen sizes */
+#navigationmain {
   display: flex;
-
+  align-items: center;
 }
 
-#navigationmain img{
-  width: 50px;
-  height: 50px;
+#navigationmain img {
+  width: 40px;
+  height: 40px;
+  margin-right: 7px;
   position: relative;
-  right: 102%;
-  bottom: 70%;
+  right: 25%;
 }
 
-#navigationmain h1{
+#navigationmain h1 {
+  font-size: 25px;
+  margin: 0;
   position: relative;
-  right: 100%;
-  bottom: 147%;
-  font-family: 'Bungee Spice';
-  font-size: 40px;
+  top: 3px;
+  right: 25%;
+}
+
+@media screen and (max-width:600px) {
+  .container #profilesubimg1{
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+  }
+
+  .container{
+    text-align: center;
+  }
+}
+
+/* Styles for screens larger than 600px */
+@media screen and (min-width: 600px) {
+  #navigationmain img {
+    width: 25px;
+    height: 25px;
+  }
+
+  #navigationmain h1 {
+    font-size: 22px;
+  }
+}
+
+/* Styles for screens larger than 1024px */
+@media screen and (min-width: 1024px) {
+  #navigationmain img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #navigationmain h1 {
+    font-size: 26px;
+  }
+  .container #profilesubimg{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: relative;
+    left: 80%;
+  }
+
+  #ulnav{
+    position: relative;
+    right: 8%;
+  }
+
+  /* .container h3{
+    display: none;
+  } */
+  #mainh3name{
+    display: none;
+  }
+  .container #subnav{
+    display:flex;
+    position: relative;
+    left: 32%;
+  }
+}
+
+/* Styles for screens larger than 1200px */
+@media screen and (min-width: 1200px) {
+  #navigationmain img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #navigationmain h1 {
+    font-size: 30px;
+  }
+  #navigationmain{
+    position: relative;
+    right: 90%;
+  }
+  #ulnav{
+    /* position: relative; */
+    left: 1%;
+  }
+  .container #profilesubimg{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    /* position: relative; */
+    left: 80%;
+  }
+
+  .container #profilesubimg1{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: relative;
+    left: 90%;
+  }
+
+  /* .container h3{
+    display: none;
+  } */
+  #mainh3name{
+    display: none;
+  }
+  .container #subnav{
+    display:flex;
+    /* position: relative; */
+    left: 50%;
+  }
+  .container #subnav1{
+    display:flex;
+    position: absolute;
+    bottom: 5px;
+    left: 700px;
+  }
 }
 
 /* Header Section */
@@ -373,55 +489,112 @@ a:focus,
   display: table;
   width: 100%;
   padding: 0;
-  background: url('http://localhost:5000/img/spaceman.jpg') center center no-repeat;
+  /* margin-top: 22%; */
+  height: 100%;
+  background: url('https://space-club.onrender.com/img/spaceman.jpg') center center no-repeat;
   background-color: #e5e5e5;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;
 }
-.intro .overlay {
+
+/* .intro .overlay {
   background: rgba(0, 0, 0, 0.2);
-}
+  padding-top: -44%;
+} */
+
 .intro h1 {
   font-family: "Raleway", sans-serif;
   color: #fff;
-  font-size: 82px;
+  font-size: 4vw; /* Adjust font size based on viewport width */
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem; /* Adjust margin bottom */
   font-family: 'Rubik Vinyl';
   position: relative;
-  top: 130px;
+  top: 10vw; /* Adjust top position based on viewport width */
 }
+
 .intro h1 span {
   font-weight: 800;
   color: #5ca9fb;
 }
+
 .intro p {
   color:white;
-  text-shadow: 2px 2px 1px black;
-  font-size: 30px;
+  text-shadow: 0.1rem 0.1rem 0.1rem black; /* Adjust text shadow */
+  font-size: 2vw; /* Adjust font size based on viewport width */
   font-weight: bold;
-  line-height: 40px;
-  word-spacing: 15px;
+  line-height: 1.5; /* Adjust line height */
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 4vw; /* Adjust margin bottom based on viewport width */
   font-family: 'Rubik Vinyl';
   position: relative;
-  top: 150px;
+  top: 12vw; /* Adjust top position based on viewport width */
 }
-header .intro-text {
-  padding-top: 350px;
-  padding-bottom: 200px;
+
+.intro-text {
+  padding-top: 15vw; /* Adjust padding top based on viewport width */
+  padding-bottom: 10vw; /* Adjust padding bottom based on viewport width */
   text-align: center;
 }
 
 .intro a{
   position: relative;
-  top: 150px;
+  top: 12vw; /* Adjust top position based on viewport width */
 }
+
+/* Media Queries for Responsive Design */
+
+/* For screens larger than 992px (medium devices) */
+@media (min-width: 600px) {
+  .intro h1 {
+    font-size: 3rem;
+    top: 8rem;
+  }
+
+  .intro p {
+    font-size: 1.5rem;
+    top: 9rem;
+  }
+
+  .intro-text {
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+  }
+
+  .intro a {
+    top: 9rem;
+  }
+}
+
+/* For screens larger than 1200px (large devices) */
+@media (min-width: 1200px) {
+  .intro h1 {
+    position: relative;
+    right: 35%;
+    top: 100%;
+    font-size: 4rem;
+    /* top: 6rem; */
+    /* bottom: 6rem; */
+  }
+
+  .intro p {
+    position: relative;
+    right: 30%;
+    font-size: 1.75rem;
+    top: 7rem;
+  }
+
+  .intro-text {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+  }
+
+  .intro a {
+    top: 7rem;
+  }
+}
+
 /* Features Section */
 #features {
   background: #f6f6f6;
@@ -443,6 +616,13 @@ header .intro-text {
   background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
+
+@media screen and (min-width:1220px) {
+  #features .container{
+    position: relative;
+    left: 10%;
+  }
+}
 /* About Section */
 #about {
   padding: 100px 0;
@@ -456,15 +636,38 @@ header .intro-text {
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
+/* Common styles for all screen sizes */
 #about h2::after {
   position: absolute;
   content: "";
   background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
   height: 4px;
-  width: 300px;
+  width: 60%; /* Adjust as needed */
   bottom: 0;
   left: 0;
 }
+
+/* Styles for screens larger than 768px */
+@media screen and (min-width: 200px) {
+  #about h2::after {
+    width: 55%; /* Adjust as needed */
+  }
+}
+
+/* Styles for screens larger than 1024px */
+@media screen and (min-width: 1024px) {
+  #about h2::after {
+    width: 1%; /* Adjust as needed */
+  }
+}
+
+/* Styles for screens larger than 1200px */
+@media screen and (min-width: 1200px) {
+  #about h2::after {
+    width: 31%; /* Adjust as needed */
+  }
+}
+
 
 #about .about-text p{
   font-size: 20px;
@@ -508,17 +711,17 @@ header .intro-text {
 #services h2 {
   color: #fff;
 }
-#services .section-title h2::after {
+/* #services .section-title h2::after {
   position: absolute;
   left: 455px;
   content: "";
   background: rgba(255, 255, 255, 0.3);
   height: 4px;
-  width: 300px;
-  bottom: 0;
-  /* margin-left: -30px; */
-  /* left: 50%; */
-}
+  /* width: 300px; */
+  /* bottom: 0;
+  margin-left: 100px;
+  left: 0%; */
+/* } */
 #services i.fa {
   font-size: 42px;
   width: 120px;
@@ -542,11 +745,16 @@ header .intro-text {
 }
 
 #services img{
-  position: relative;
-  left: 30px;
   height:300px;
   width: 300px;
   border-radius: 50%;
+}
+
+@media screen and (min-width:1220px) {
+  .container{
+    position: relative;
+    left: 10%;
+  }
 }
 
 /* Portfolio Section */
@@ -806,6 +1014,7 @@ label {
 
 /* Login Page */
 
+/* Media Queries for Responsive Design */
 #loginblock{
   width:350px;
   padding-bottom:25px;
@@ -894,6 +1103,79 @@ label {
   position: relative;
   top:35px;
 }
+/* For screens smaller than 600px (mobile) */
+@media (max-width: 600px) {
+  #loginblock {
+    background:transparent;
+    backdrop-filter: blur(50px);
+    border-radius:30px;
+    width: 80%; /* Adjust width for mobile */
+    left: 50%; /* Center align horizontally */
+    transform: translateX(-50%); /* Center align horizontally */
+    top: 20%; /* Adjust vertical position */
+  }
+
+  #loginblock2{
+    margin-top: 10%;
+    border: none;
+    color: white;
+    border-bottom: 2px solid white;
+    text-align: center;
+    font-size: large;
+    background-color: transparent;
+    text-align: center;
+    width: 80%; /* Adjust width for mobile */
+  }
+  #loginblock2:focus{
+    outline: none;
+    border-bottom: 5px solid rgb(31, 202, 31);
+    border-radius: 25%;
+  }
+
+  #loginblock2 {
+    top: 20px; /* Adjust top spacing */
+  }
+  #loginbutton1{
+    cursor: pointer;
+    background-color:blue;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+    height: 45px;
+    width:255px;
+    margin-top:30px;
+    border-radius:10px;
+    border: none;
+    text-align: center;
+  }
+  #loginbutton1 {
+    margin-top: 20px; /* Adjust top margin */
+  }
+
+  #hr {
+    top: 30px; /* Adjust top spacing */
+  }
+  #hr{
+    width:250px;
+    border: 1px solid red;
+    background-color: red;
+    opacity: 1;
+    border-radius:100%;
+  }
+}
+
+/* For screens larger than 992px (laptop) */
+@media (min-width: 992px) {
+  #loginblock {
+    background:transparent;
+    backdrop-filter: blur(50px);
+    border-radius:30px;
+    width: 350px; /* Reset width for laptop */
+    left: 800px; /* Reset left position for laptop */
+    top: 150px; /* Reset top position for laptop */
+  }
+}
+
 
 /* New Account */
 
@@ -957,7 +1239,7 @@ label {
   font-size:large;
   height: 45px;
   width:270px;
-  /* margin-top:30px; */
+  margin-top:40px;
   position: relative;
   left:65px;
   border-radius:10px;
@@ -970,10 +1252,10 @@ label {
   color:black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size:large;
-  height: 45px;
-  width:270px;
+  /* height: 45px;
+  width:270px; */
   /* margin-top:30px; */
-  position: relative;
+  /* position: relative; */
   /* top:20px; */
   border-radius:10px;
   border: none;
@@ -985,10 +1267,10 @@ label {
   color:black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size:large;
-  height: 45px;
-  width:270px;
+  /* height: 45px;
+  width:270px; */
   /* margin-top:30px; */
-  position: relative;
+  /* position: relative; */
   /* top:20px; */
   border-radius:10px;
   border: none;
@@ -1096,15 +1378,107 @@ label {
   /* right: 12.25px; */
 }
 
+/* For smaller screens, adjust layout and styles */
+/* @media screen and (max-width:1500px) {
+  #newaccountbtn{ */
+    /* position: relative; */
+    /* top: 500px;
+  }
+} */
+@media screen and (max-width: 768px) {
+  #createnewaccount {
+    width: 80%;
+    height: 100%;
+    left: 0;
+    padding: 20px;
+    margin-left: 38px;
+  }
+
+  #otpwindow{
+    width: 90%;
+    left:20;
+  }
+
+  /* Adjust styles for input fields */
+  .newaccount {
+    width: 80%;
+    height: 8%;
+    margin-bottom: 5px;
+  }
+
+  /* Adjust styles for the profile image */
+  #editimg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Adjust styles for the submit button */
+  .newaccountbtn {
+    width: 80%;
+    height: 8%;
+    margin-top: 40px;
+    position: relative;
+    left: 24px;
+  }
+
+  /* Adjust styles for OTP input fields */
+  .otpinput {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* Adjust styles for OTP submit button */
+  .otpbtn {
+    width: 80%;
+    height: 8%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
 /* editprofile */
+
+@media screen and (max-width:768px) {
+  #settingsbtns {
+    display:grid;
+    text-align: center;
+    position: relative;
+    top: 600px;
+    right: 15px;
+  }
+
+  #editprofile h4{
+    color: white;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  #editprofile{
+    position: relative;
+    top: 60px;
+  }
+
+  #editprofile h4{
+    font-size:x-large;
+    padding-top: 25px;
+    color: black;
+  }
+}
+
+#editprofile input{
+  background: transparent;
+  color: white;
+}
 
 #editimgdiv{
   position: relative;
   top: 40px;
-  left: 80px;
-  display: block;
-  /* background-color: white; */
-  width: 200px;
+  /* left: 80px; */
+  /* display: block; */
+  /* width: 200px; */
 }
 
 #editimg{
@@ -1249,4 +1623,137 @@ label {
 
 #addnewproject input{
   margin-top: 10px;
+}
+
+.container11 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container11 .preloader11 {
+  animation: rotate 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+@keyframes rotate {
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+.preloader11 span {
+  position: absolute;
+  display: block;
+  height: 64px;
+  width: 64px;
+  background: #3fc1f2;
+  border: 1px solid #3fc1f2;
+  border-radius: 100%;
+}
+.preloader11 span:nth-child(1) {
+  transform: translate(-28px, -28px);
+  animation: shape_1 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+@keyframes shape_1 {
+  60% {
+    transform: scale(0.4);
+  }
+}
+.preloader11 span:nth-child(2) {
+  transform: translate(28px, -28px);
+  animation: shape_2 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+@keyframes shape_2 {
+  40% {
+    transform: scale(0.4);
+  }
+}
+.preloader11 span:nth-child(3) {
+  position: relative;
+  border-radius: 0px;
+  transform: scale(0.98) rotate(-45deg);
+  animation: shape_3 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+@keyframes shape_3 {
+  50% {
+    border-radius: 100%;
+    transform: scale(0.5) rotate(-45deg);
+  }
+  100% {
+    transform: scale(0.98) rotate(-45deg);
+  }
+}
+.shadow11 {
+  position: relative;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  height: 16px;
+  width: 64px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  border: 1px solid #d9d9d9;
+  animation: shadow 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+@keyframes shadow11 {
+  50% {
+    transform: translateX(-50%) scale(0.5);
+    border-color: #f2f2f2;
+  }
+}
+.container11 {display: inline-block;}
+
+@keyframes cursor {
+  50% { border-color: transparent;}
+}
+@keyframes typing {
+  from {width: 0 }
+}
+
+
+/*======================
+404 page
+=======================*/
+
+
+.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+}
+
+.page_404  img{ width:100%;}
+
+.four_zero_four_bg{
+
+background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+height: 400px;
+background-position: center;
+}
+
+
+.four_zero_four_bg h1{
+font-size:80px;
+}
+
+.four_zero_four_bg h3{
+font-size:80px;
+}
+
+.link_404{			 
+color: #fff!important;
+padding: 10px 20px;
+background: #39ac31;
+margin: 20px 0;
+display: inline-block;}
+.contant_box_404{ margin-top:-50px;}
+
+
+/* events */
+
+.eventreg1{
+  display: none;
+}
+
+.eventreg2{
+  display: none;
 }

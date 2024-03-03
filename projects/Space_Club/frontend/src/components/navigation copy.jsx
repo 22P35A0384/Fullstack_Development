@@ -2,56 +2,71 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 export const Navigationhome = (props) => {
-  const Nav = useNavigate()
-  const Getlogout=()=>{
-    // e.preventDefault()
-    // document.getElementsByClassName('backgroundimg').style.backgroundImage="url('http://localhost:5000/img/space.jpg')"
-    Nav('/logout')
-  }
-  const Gotosettings=()=>{
-    Nav('/editprofile')
-  }
-  const Gotohome=()=>{
-    Nav('/home')
-  }
-  const Gotoprojects=()=>{
-    Nav('/projects')
-  }
-  const[data,setdata] = useState({
-    'profile':'',
-    'fname':'',
-    'lname':''
-  })
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  const Nav = useNavigate();
+  const [data, setData] = useState({
+    profile: '',
+    fname: '',
+    lname: ''
+  });
+
   useEffect(() => {
-    axios.get(`http://localhost:5000/getdata/${window.localStorage.getItem('user')}`).then((res) => {
-        setdata({
-          profile: res.data.profile,
-          fname: res.data.fname,
-          lname: res.data.lname
-        });
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
+    axios.get(`https://space-club.onrender.com/getdata/${window.localStorage.getItem('user')}`).then((res) => {
+      setData({
+        profile: res.data.profile,
+        fname: res.data.fname,
+        lname: res.data.lname
       });
+    }).catch((error) => {
+      console.error('Error fetching data:', error);
+    });
   }, []);
-  // window.location.reload()
+
+  const toggleNavbarCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  const Getlogout = () => {
+    Nav('/logout');
+    toggleNavbarCollapse();
+  };
+
+  const Gotosettings = () => {
+    Nav('/editprofile');
+    toggleNavbarCollapse();
+  };
+
+  const Gotohome = () => {
+    Nav('/home');
+    toggleNavbarCollapse();
+  };
+
+  const Gotoprojects = () => {
+    Nav('/projects');
+    toggleNavbarCollapse();
+  };
+
+  const Gotoevents = () => {
+    Nav('/passes');
+    toggleNavbarCollapse();
+  };
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
           <a className="navbar-brand page-scroll" href="#page-top" id="navigationmain">
-            <img src="http://localhost:5000/img/nav_icon.jpg" alt="astec logo"/>
+            <img src="https://space-club.onrender.com/img/nav_icon.jpg" alt="astec logo"/>
             <h1>ASTEC</h1>
           </a>{" "}
           <button
             type="button"
             className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
+            onClick={toggleNavbarCollapse}
+            aria-expanded={!isCollapsed}
+            style={{position:'relative',left:'10%'}}
           >
-            {" "}
             <span className="sr-only">Toggle navigation</span>{" "}
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
@@ -60,60 +75,56 @@ export const Navigationhome = (props) => {
         </div>
 
         <div
-          className="collapse navbar-collapse"
+          className={`collapse navbar-collapse ${isCollapsed ? '' : 'in'}`}
           id="bs-example-navbar-collapse-1"
+          style={{textAlign:'center'}}
         >
-          <ul className="nav navbar-nav navbar-right">
+          <img src={`https://space-club.onrender.com/profile/${data.profile}`} id="profilesubimg"/>
+          <h3 id="mainh3name">{data.fname} {data.lname}</h3>
+          <ul id="ulnav" className="nav navbar-nav navbar-right">
             <li>
-              <a href='#features' className="page-scroll" onClick={() => window.location.href='/home#features'}>
+              <a style={{backgroundColor:'transparent'}} href="#features" className="page-scroll">
                 Events
               </a>
             </li>
             <li>
-              <a href="#about" className="page-scroll" onClick={() => window.location.href='/home#about'}>
+              <a style={{backgroundColor:'transparent'}} href="#about" className="page-scroll">
                 Our AIM
               </a>
             </li>
             <li>
-              <a href="#services" className="page-scroll" onClick={() => window.location.href='/home#services'}>
+              <a style={{backgroundColor:'transparent'}} href="#services" className="page-scroll">
                 COLLABORATIONS
               </a>
             </li>
             <li>
-              <a href="#portfolio" className="page-scroll" onClick={() => window.location.href='/home#portfolio'}>
+              <a style={{backgroundColor:'transparent'}} href="#portfolio" className="page-scroll">
                 Gallery
               </a>
             </li>
             <li>
-              <a href="#testimonials" className="page-scroll" onClick={() => window.location.href='/home#testimonials'}>
+              <a style={{backgroundColor:'transparent'}} href="#testimonials" className="page-scroll">
                 Testimonials
               </a>
             </li>
             <li>
-              <a href="#team" className="page-scroll" onClick={() => window.location.href='/home#team'}>
+              <a style={{backgroundColor:'transparent'}} href="#team" className="page-scroll">
                 Team
               </a>
             </li>
             <li>
-              <a href="#contact" className="page-scroll" onClick={() => window.location.href='/home#contact'}>
+              <a style={{backgroundColor:'transparent'}} href="#contact" className="page-scroll">
                 Contact
               </a>
             </li>
-            <li>
-              <div class="dropdown">
-                <img src={`http://localhost:5000/profile/${data.profile}`} id="profileimg" class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style={{textAlign:'center',padding:'20px'}}>
-                  <img src={`http://localhost:5000/profile/${data.profile}`} id="profilesubimg"/>
-                  <h3>{data.fname} {data.lname}</h3>
-                  <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Gotohome()}}>HOME</a><br/>
-                  <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Gotoprojects()}}>PROJECTS</a><br/>
-                  <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Getlogout()}}>TEAMS</a><br/>
-                  <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Gotosettings()}}>SETTINGS</a><br/>
-                  <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Getlogout()}}>LOGOUT</a>
-                </div>
-              </div>
-            </li>
           </ul>
+          <div id="subnav">
+            <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Gotohome()}}>HOME</a><br/>
+            <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Gotoprojects()}}>PROJECTS</a><br/>
+            <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Gotoevents()}}>EVENTS</a><br/>
+            <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Gotosettings()}}>SETTINGS</a><br/>
+            <a class="dropdown-item" id="profilea" href="#" onClick={()=>{Getlogout()}}>LOGOUT</a>
+          </div>
         </div>
       </div>
     </nav>
