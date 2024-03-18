@@ -36,6 +36,7 @@ const Events = () => {
         'second_mail':'',
         'second_mobile':''
     })
+    const [Registrationtype, Setregistrationtype] = useState('')
     const Checkcomp = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
     
@@ -89,7 +90,6 @@ const Events = () => {
                         const hours = now.getHours();
                         const minutes = now.getMinutes();
                         const seconds = now.getSeconds();
-
                         async function createAndDownloadReceipt(imageData, data) {
                             const pdfDoc = await PDFDocument.create();
                             const page = pdfDoc.addPage([594, 420]);
@@ -116,21 +116,39 @@ const Events = () => {
                             page.drawText(`${day}/${month}/${year} ${hours}:${minutes}:${seconds}`, { ...textOptions, y: 284 });
                             page.drawText(Registration.roll || ' ', { ...textOptions, y: 269 });
                             page.drawText(Registration.name || ' ', { ...textOptions, y: 254 });
-                            page.drawText('Single Registration', { x: 35, y: 183, color: rgb(0, 0, 0) });
-                            page.drawText('30/-', { x: 550, y: 183, color: rgb(0, 0, 0) });
-                            page.drawText('30/-', { x: 550, y: 145, color: rgb(0, 0, 0) });
-                            page.drawText('30/-', { x: 550, y: 125, color: rgb(0, 0, 0), size: 10 });
-
+                            page.drawText(Registration.compitation, { x: 35, y: 183, color: rgb(0, 0, 0) });
+                            page.drawText(`${data.amount/100}`, { x: 550, y: 183, color: rgb(0, 0, 0) });
+                            page.drawText(`${data.amount/100}`, { x: 550, y: 145, color: rgb(0, 0, 0) });
+                            page.drawText(`${data.amount/100}`, { x: 550, y: 125, color: rgb(0, 0, 0), size: 10 });
                             const pdfBytes = await pdfDoc.save();
                             const blob = new Blob([pdfBytes], { type: 'application/pdf' });
 
-                            const link = document.createElement('a');
-                            link.href = window.URL.createObjectURL(blob);
-                            link.download = `${Registration.roll}.pdf`;
+                            const iframe = document.createElement('iframe');
+                            iframe.src = window.URL.createObjectURL(blob);
+                            iframe.style.marginTop = '1%'
+                            iframe.style.width = '100%';
+                            iframe.style.height = '100%';
+                            iframe.style.border = 'none';
+                            document.getElementById('editprofile').style.display='none'
+                            document.body.appendChild(iframe);
+                            const downloadButton = document.createElement('button');
+                            downloadButton.textContent = 'Download PDF';
+                            downloadButton.style.marginLeft = '40%';
+                            // downloadButton.style.position = 'relative'
+                            downloadButton.style.top = '-25%'
+                            downloadButton.id = "loginbutton1"
+                            downloadButton.onclick = () => {
+                                const link = document.createElement('a');
+                                link.href = window.URL.createObjectURL(blob);
+                                link.download = `${Registration.roll}.pdf`;
 
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+                                Nav('/passes')
+                            };
+
+                            document.body.appendChild(downloadButton);
                         }
 
                         const imageData = 'https://space-club.onrender.com/img/sourcerecipt.png';
